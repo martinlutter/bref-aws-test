@@ -1,0 +1,10 @@
+services:
+  app:
+    image: bref/php-83-fpm-dev:2
+    ports: ["127.0.0.1:8000:8000"]
+    volumes:
+      - ./app:/var/task
+    environment:
+      HANDLER: public/index.php
+      # Assets will be served from this directory
+      DOCUMENT_ROOT: public
